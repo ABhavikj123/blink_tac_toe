@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
@@ -15,7 +13,7 @@ import { initializeGame, initializeSingleGame, initializeTournament, makeMove, r
 import { getRandomEmoji } from "@/lib/emoji-categories"
 import type { GameState } from "@/types/game"
 import { RotateCcw, Play, Gamepad2, ArrowLeft } from "lucide-react"
-
+import { Analytics } from '@vercel/analytics/react';
 export default function App() {
   const [gameState, setGameState] = useState<GameState>(initializeGame())
   const [showWinAnimation, setShowWinAnimation] = useState(false)
@@ -274,6 +272,7 @@ export default function App() {
           <WinningAnimation winner={gameState.winner} onComplete={handleWinAnimationComplete} />
         )}
       </div>
+      <Analytics />
     </div>
   )
 }

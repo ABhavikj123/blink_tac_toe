@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect, useState } from "react"
 import { Trophy } from "lucide-react"
 import type { Player } from "@/types/game"
